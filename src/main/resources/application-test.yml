@@ -1,0 +1,26 @@
+spring:
+  ##数据源配置
+  datasource:
+      master:
+          type: com.alibaba.druid.pool.DruidDataSource
+          url: jdbc:mysql://localhost:3306/xdxy_huankong?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+          username: root
+          password: root
+          driverClassName: com.mysql.cj.jdbc.Driver
+          filters: stat,wall   #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+          initial-size: 10
+          max-active: 100
+          min-idle: 10
+          max-wait: 60000
+          pool-prepared-statements: true
+          max-pool-prepared-statement-per-connection-size: 20
+          time-between-eviction-runs-millis: 60000
+          min-evictable-idle-time-millis: 300000
+          validation-query: SELECT 1 FROM DUAL
+          testWhileIdle: true
+          testOnBorrow: false
+          testOnReturn: false
+          poolPreparedStatements: true
+          maxPoolPreparedStatementPerConnectionSize: 20
+          useGlobalDataSourceStat: true
+          connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

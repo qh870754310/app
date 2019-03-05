@@ -1,0 +1,22 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: 上海天华学院
+    # 环境 dev|test|pro
+  profiles:
+    active: test
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+# Mybatis配置
+mybatis:
+  #mapper.xml文件路径
+  mapperLocations: classpath:mapper/*.xml
+  configLocation: classpath:config/mybatis/mybatis-config.xml
+
+#日志配置
+logging:
+    config: classpath:config/log/logback-boot.xml
